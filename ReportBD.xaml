@@ -1,0 +1,31 @@
+﻿<Window x:Class="Quizpr4.ReportBD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Quizpr4"
+        mc:Ignorable="d"
+        Title="ReportBD" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="QuizDataGrid" 
+          AutoGenerateColumns="False" 
+          EnableRowVirtualization="True" 
+          ItemsSource="{Binding}" 
+          Margin="0,0,293,0" 
+          RowDetailsVisibilityMode="VisibleWhenSelected" 
+          IsManipulationEnabled="True" 
+          IsTextSearchEnabled="True"
+          IsTextSearchCaseSensitive="True" 
+          ColumnWidth="SizeToCells" IsSynchronizedWithCurrentItem="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="UsernameColumn" Binding="{Binding Username}" Header="Фамилия" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="Excel1Tab" Content="Excel таблица"
+            Margin="0,56,40,0"
+            FontFamily="Century Gothic"
+            FontSize="13"
+            BorderBrush="White" Background="SeaGreen" Foreground="White" Click="Excel1Tab_Click" Height="32" VerticalAlignment="Top" HorizontalAlignment="Right" Width="161"/>
+    </Grid>
+</Window>
